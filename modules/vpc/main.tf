@@ -1,9 +1,9 @@
-resource "aws_vpc" "example" {
+resource "aws_vpc" "terraform_example" {
   cidr_block = var.cidr
 }
 
-resource "aws_default_security_group" "default" {
-  vpc_id = aws_vpc.example.id
+resource "aws_default_security_group" "terraform_default" {
+  vpc_id = aws_vpc.terraform_example.id
 
   ingress {
     protocol  = -1
@@ -13,10 +13,10 @@ resource "aws_default_security_group" "default" {
   }
 }
 
-resource "aws_security_group" "allow_ssh" {
-  name        = "allow_ssh"
+resource "aws_security_group" "terraform_allow_ssh" {
+  name        = "terraform_allow_ssh"
   description = "Allow SSH inbound from anywhere"
-  vpc_id      = aws_vpc.example.id
+  vpc_id      = aws_vpc.terraform_example.id
 
   ingress {
     from_port   = 22
@@ -26,10 +26,10 @@ resource "aws_security_group" "allow_ssh" {
   }
 }
 
-resource "aws_security_group" "allow_ssh_with_valid_cidr" {
-  name        = "allow_ssh_with_valid_cidr"
+resource "aws_security_group" "terraform_allow_ssh_with_valid_cidr" {
+  name        = "terraform_allow_ssh_with_valid_cidr"
   description = "Allow SSH inbound from specific range"
-  vpc_id      = aws_vpc.example.id
+  vpc_id      = aws_vpc.terraform_example.id
 
   ingress {
     from_port   = 22
