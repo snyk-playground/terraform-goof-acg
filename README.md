@@ -1,3 +1,6 @@
+# Terraform Cloud example
+This branch has a modified AWS provider to utilize credential variables to support demoing Terraform Cloud.
+
 # Snyk Infrastructure as Code Demo
 
 This repository contains a hello world example which demonstrates the Terraform features of Snyk Infrastructure as code.
