@@ -71,7 +71,7 @@ resource "aws_db_instance" "terraform_snyk_db" {
   db_name                      = "terraform_snyk_db_${var.environment}"
   allocated_storage         = 20
   engine                    = "postgres"
-  engine_version            = "16.2"
+  engine_version            = "17.4"
   instance_class            = "db.t3.micro"
   storage_type              = "gp2"
   password                  = var.db_password
